@@ -1,0 +1,31 @@
+@import './font.scss';
+@import './main.scss';
+@import './animation.css';
+* {
+  padding: unset;
+  margin: unset;
+  box-sizing: border-box;
+}
+
+html,
+body,
+a,
+span,
+p,
+ul,
+ol,
+li,
+div,
+input,
+button,
+textarea {
+  font-family: 'maoken';
+  letter-spacing: 2px;
+}
+html{
+  font-size: 20px;
+  line-height: 1.5;
+}
+body{
+  padding: 10px 20px;
+}
