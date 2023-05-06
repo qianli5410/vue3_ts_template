@@ -25,18 +25,18 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     /* 自定义配置 */
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    },
+    "baseUrl": "src",
+    "paths": {"@/*": ["./*"]},
     "types": ["node", "vite"]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/*.vue",
   ],
+  "exclude": ["node_modules"],
   "references": [
     {
       "path": "./tsconfig.node.json"

@@ -1,13 +1,10 @@
-<script setup lang="ts">
-import { animationMap } from '@/assets/function/newMap'
+<script lang="ts" setup>
+import Layout from '@/components/Layout/index.vue'
 </script>
 
 <template>
-  <router-view v-slot="{ Component }">
-    <transition :name="animationMap.get('上下切换')">
-      <component :is="Component" />
-    </transition>
-  </router-view>
+    <Layout/>
+  <!--    <router-view></router-view>-->
 </template>
 
 <style>
