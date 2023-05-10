@@ -13,12 +13,14 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
+import eslintPlugin from 'vite-plugin-eslint'
+
 const PrintFunc = () => {
-  return {
-    name: 'Print',
-    options() {
-      console.log(
-        `
+    return {
+        name: 'Print',
+        options() {
+            console.log(
+                `
        ##    ##  #######  ##       
         ##  ##  ##     ## ##       
          ####   ##     ## ##       
@@ -27,69 +29,72 @@ const PrintFunc = () => {
           ##    ##    ##  ##       
           ##     ##### ## ######## 
       `
-      );
-    },
-  }
+            )
+        }
+    }
 }
 
-
-import { join } from "path";
+import { join } from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    visualizer(),
-    viteCompression(
-      {
-        algorithm: 'gzip',
-        threshold: 10240,
-        verbose: false,
-        deleteOriginFile: true
-      }
-    ),
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
-    PrintFunc()
-  ],
-  envDir: './env',
-  build: {
-    minify: 'esbuild',
-    cssCodeSplit: true,
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-      output: {
-        comments: true,
-      },
-    },
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vue: ['vue', 'pinia', 'vue-router'],
-          lodash: ['lodash-es'],
-          element: ['element-plus'],
+    base: './',
+    plugins: [
+        vue(),
+        visualizer(),
+        // viteCompression(
+        //   {
+        //     algorithm: 'gzip',
+        //     threshold: 10240,
+        //     verbose: false,
+        //     deleteOriginFile: true
+        //   }
+        // ),
+        AutoImport({
+            resolvers: [ElementPlusResolver()]
+        }),
+        Components({
+            resolvers: [ElementPlusResolver()]
+        }),
+        PrintFunc(),
+        eslintPlugin({
+            include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue']
+        })
+    ],
+    envDir: './env',
+    build: {
+        minify: 'esbuild',
+        cssCodeSplit: true,
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true
+            },
+            output: {
+                comments: true
+            }
+        },
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    vue: ['vue', 'pinia', 'vue-router'],
+                    lodash: ['lodash-es'],
+                    element: ['element-plus']
+                }
+            }
         }
-      }
-    }
-  },
-  resolve: {
-    alias: {
-      '@': join(__dirname, 'src')
-    }
-  },
-  css: {
-    /* CSS 预处理器 */
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "./src/assets/style/main.scss" as *;`,
-      },
     },
-    devSourcemap: true
-  },
+    resolve: {
+        alias: {
+            '@': join(__dirname, 'src')
+        }
+    },
+    css: {
+        /* CSS 预处理器 */
+        preprocessorOptions: {
+            scss: {
+                additionalData: `@use "./src/assets/style/main.scss" as *;`
+            }
+        },
+        devSourcemap: true
+    }
 })

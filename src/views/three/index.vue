@@ -4,6 +4,4 @@
     <div>three</div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
