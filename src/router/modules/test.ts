@@ -9,6 +9,12 @@ export const testRoutes: RouteRecordRaw[] = [
         meta: { transition: 'slide-left', title: '首页' }
     },
     {
+        path: '/popover',
+        name: 'popover',
+        component: defineAsyncComponent(() => import('@/views/popover/index.vue')),
+        meta: { transition: 'slide-left', title: '弹窗' }
+    },
+    {
         path: '/test',
         name: 'test',
         component: defineAsyncComponent(() => import('@/views/test/index.vue')),
