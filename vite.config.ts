@@ -56,9 +56,9 @@ export default defineConfig({
             resolvers: [ElementPlusResolver()]
         }),
         PrintFunc(),
-        eslintPlugin({
-            include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue']
-        })
+        // eslintPlugin({
+        //     include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue']
+        // })
     ],
     envDir: './env',
     build: {
