@@ -39,12 +39,12 @@ export default defineConfig({
 	plugins: [
 		vue(),
 		visualizer(),
-		viteCompression({
-			algorithm: 'gzip',
-			threshold: 10240,
-			verbose: false,
-			deleteOriginFile: true,
-		}),
+		// viteCompression({
+		// 	algorithm: 'gzip',
+		// 	threshold: 10240,
+		// 	verbose: false,
+		// 	deleteOriginFile: true,
+		// }),
 		AutoImport({
 			resolvers: [ElementPlusResolver()],
 		}),
