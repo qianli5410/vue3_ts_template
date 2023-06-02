@@ -1,8 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import { useRouter } from 'vue-router'
 const props = defineProps(['list'])
 const router = useRouter()
-const routerTo = path => {
+const routerTo = (path: string) => {
 	router.push(path)
 }
 </script>

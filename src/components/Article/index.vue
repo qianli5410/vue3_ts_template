@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 const props = defineProps(['text'])
 
-const articleText = props.text
+// const articleText = props.text
 
-const article = ref('')
+// const article = ref('')
 
 const isCursor = ref(true)
 // onMounted(async () => {

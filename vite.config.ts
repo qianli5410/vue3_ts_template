@@ -39,14 +39,12 @@ export default defineConfig({
 	plugins: [
 		vue(),
 		visualizer(),
-		// viteCompression(
-		//   {
-		//     algorithm: 'gzip',
-		//     threshold: 10240,
-		//     verbose: false,
-		//     deleteOriginFile: true
-		//   }
-		// ),
+		viteCompression({
+			algorithm: 'gzip',
+			threshold: 10240,
+			verbose: false,
+			deleteOriginFile: true,
+		}),
 		AutoImport({
 			resolvers: [ElementPlusResolver()],
 		}),
@@ -77,6 +75,8 @@ export default defineConfig({
 					vue: ['vue', 'pinia', 'vue-router'],
 					lodash: ['lodash-es'],
 					element: ['element-plus'],
+					antvl7: ['@antv/l7'],
+					antvl7maps: ['@antv/l7-maps'],
 				},
 			},
 		},
