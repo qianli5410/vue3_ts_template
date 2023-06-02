@@ -3,10 +3,9 @@ import Layout from '@/components/Layout/index.vue'
 </script>
 
 <template>
-    <div>
-        <Layout />
-    </div>
-    <!--    <router-view></router-view>-->
+	<div id="backapp">
+		<Layout />
+	</div>
 </template>
 
 <style></style>

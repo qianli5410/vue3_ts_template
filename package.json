@@ -11,6 +11,8 @@
 		"lint": "eslint src --ext .js,.ts --cache --fix"
 	},
 	"dependencies": {
+		"@antv/l7": "^2.15.5",
+		"@antv/l7-maps": "^2.15.5",
 		"axios": "^1.3.6",
 		"element-plus": "^2.3.4",
 		"lodash-es": "^4.17.21",

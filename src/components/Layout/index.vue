@@ -5,7 +5,7 @@ import { routes } from '@/router/index.ts'
 <template>
 	<el-container class="content">
 		<el-header height="70px">
-			<section class="header">Header</section>
+			<section class="header">天不生我杨某人，前端万古如长夜</section>
 		</el-header>
 		<el-container>
 			<el-aside width="300px">
@@ -39,7 +39,8 @@ import { routes } from '@/router/index.ts'
 		padding-right: 0;
 	}
 	.el-menu {
-		height: 100%;
+		height: calc(100vh - 90px);
+		overflow-y: scroll;
 	}
 	.menu {
 		border-radius: 10px;
@@ -50,11 +51,21 @@ import { routes } from '@/router/index.ts'
 		border-radius: 10px;
 		background: #ffffff;
 		padding: 20px;
+		height: calc(100vh - 90px);
+		overflow-y: scroll;
 	}
 	.header {
 		height: 100%;
 		border-radius: 10px;
 		background: #ffffff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.el-menu::-webkit-scrollbar,
+	.main::-webkit-scrollbar {
+		display: none;
 	}
 }
 </style>
