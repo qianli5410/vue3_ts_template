@@ -1,14 +1,22 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 const props = defineProps(['list'])
 const router = useRouter()
+const route = useRoute()
 const routerTo = (path: string) => {
     router.push(path)
 }
 </script>
 
 <template>
-    <el-menu class="menu" active-text-color="#FF6600" background-color="#FFFFFF" text-color="#333333" popper-effect="dark">
+    <el-menu
+        class="menu"
+        active-text-color="#FF6600"
+        background-color="#FFFFFF"
+        text-color="#333333"
+        popper-effect="dark"
+        :default-active="route.path"
+    >
         <template v-for="item in props.list" :key="item.path">
             <el-sub-menu v-if="item.children" :index="item.path">
                 <template #title>

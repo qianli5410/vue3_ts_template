@@ -14,19 +14,24 @@ const state = reactive({
     <section>
         <el-avatar :size="50" :src="faceUrl" />
         <el-divider />
-        <el-text size="large">作者：</el-text>
+        <el-text class="title" size="large">作者：</el-text>
         <el-text size="large" type="primary">{{ state['作者'] }}</el-text>
         <el-divider />
-        <el-text size="large">博客：</el-text>
+        <el-text class="title" size="large">博客：</el-text>
         <el-link type="primary" :href="state['博客']">{{ state['博客'] }}</el-link>
         <el-divider />
-        <el-text size="large">GitHub：</el-text>
+        <el-text class="title" size="large">GitHub：</el-text>
         <el-link type="primary" :href="state['GitHub']">{{ state['GitHub'] }}</el-link>
         <el-divider />
-        <el-text size="large">邮箱：</el-text>
+        <el-text class="title" size="large">邮箱：</el-text>
         <el-text type="primary">{{ state['邮箱'] }}</el-text>
         <el-divider />
     </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.title {
+    display: inline-block;
+    width: 120px;
+}
+</style>
