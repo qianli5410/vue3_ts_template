@@ -30,30 +30,30 @@ const isCursor = ref(true)
 </script>
 
 <template>
-	<div class="typewriter">
-		{{ props.text }}
-		<span v-show="isCursor" class="cursor"></span>
-	</div>
+    <div class="typewriter">
+        {{ props.text }}
+        <span v-show="isCursor" class="cursor"></span>
+    </div>
 </template>
 
 <style scoped lang="scss">
 .typewriter {
-	position: relative;
+    position: relative;
 }
 .cursor {
-	border-right: 2px solid black;
-	width: 0px;
-	height: 24px;
-	animation: blink-caret 0.75s step-end infinite;
+    border-right: 2px solid black;
+    width: 0px;
+    height: 24px;
+    animation: blink-caret 0.75s step-end infinite;
 }
 
 @keyframes blink-caret {
-	from,
-	to {
-		border-color: transparent;
-	}
-	50% {
-		border-color: black;
-	}
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
 }
 </style>

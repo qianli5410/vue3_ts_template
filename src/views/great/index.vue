@@ -46,15 +46,15 @@ var isIE6 = !isIE7 && !isIE8 && !isIE9;
 </script>
 
 <template>
-	<p class="title">如何成为一名卓越 (great) 的前端工程师</p>
-	<Article :text="text" />
+    <p class="title">如何成为一名卓越 (great) 的前端工程师</p>
+    <Article :text="text" />
 </template>
 
 <style scoped lang="scss">
 .title {
-	text-align: center;
-	font-size: 30px;
-	font-weight: 500;
-	margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
 </style>
